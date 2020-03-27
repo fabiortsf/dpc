@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "Declarar Perda";
+    Layout = "~/Views/Shared/_App.cshtml";
+}
+
+<!-- Page header -->
+<div class="page-header">
+    <div class="page-title">
+        <h3>Declaração de Perda <small>Informe os produtos de perda ou avaria</small></h3>
+    </div>
+</div>
+<!-- /page header -->
+
+<div class="breadcrumb-line">
+    <ul class="breadcrumb">
+        <li>@Html.ActionLink("Home", "index", "app")</li>
+    </ul>
+
+    <div class="visible-xs breadcrumb-toggle">
+        <a class="btn btn-link btn-lg btn-icon" data-toggle="collapse" data-target=".breadcrumb-buttons"><i class="icon-menu2"></i></a>
+    </div>
+
+    <ul class="breadcrumb-buttons collapse"></ul>
+</div>
+
+
+<!-- Cadastro -->
+<div class="block">
+
+    <h6 class="heading-hr"><span data-icon="&#xe27a;"></span>&nbsp;Dados da declaração</h6>
+    <form id="frmCadastro" name="frmCadastro" class="form-horizontal" role="form">
+
+        <div class="row">
+            <div class="col-sm-6 col-lg-4">
+                <div class="form-group">
+                    <label for="txtNome" class="col-md-4 control-label">Código de Barras</label>
+                    <div class="col-md-8">
+                        <input class="form-control input-sm" id="txtCodigoDeBarras" name="txtCodigoDeBarras" placeholder="Código de Barras" type="text" maxlength="25"
+                               required data-toggle="tooltip"
+                               data-rule-required="true" data-msg-required="Informe o código de barras"
+                               data-rule-minlength="1" data-msg-minlength="Informe ao menos 1 caracter">
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.row this actually does not appear to be needed with the form-horizontal -->
+
+        <button id="btnSalvar" class="btn btn-sm btn-info" type="submit">Declarar Perda</button>
+    </form>
+</div>
+<!-- /Cadastro -->
+@section scripts{
+
+}
+

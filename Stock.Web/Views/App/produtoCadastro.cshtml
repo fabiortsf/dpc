@@ -1,0 +1,105 @@
+﻿@{
+    ViewBag.Title = "Cadastro de Produto";
+    Layout = "~/Views/Shared/_App.cshtml";
+}
+
+<!-- Page header -->
+<div class="page-header">
+    <div class="page-title">
+        <h3>Cadastro de Produto <small>Administre o cadastro de seus produtos</small></h3>
+    </div>
+</div>
+<!-- /page header -->
+
+<div class="breadcrumb-line">
+    <ul class="breadcrumb">
+        <li>@Html.ActionLink("Home", "index", "app")</li>
+    </ul>
+
+    <div class="visible-xs breadcrumb-toggle">
+        <a class="btn btn-link btn-lg btn-icon" data-toggle="collapse" data-target=".breadcrumb-buttons"><i class="icon-menu2"></i></a>
+    </div>
+
+    <ul class="breadcrumb-buttons collapse"></ul>
+</div>
+
+
+<!-- Cadastro -->
+<div class="block">
+
+    <h6 class="heading-hr"><span data-icon="&#xe27a;"></span>&nbsp;Dados do produto</h6>
+    <form id="frmCadastro" name="frmCadastro" class="form-horizontal" role="form">
+        <input id="hdnIdProduto" type="hidden" value="@Request.Params["IdProduto"]">
+        <div class="row">
+            <div class="col-sm-6 col-lg-4">
+                <div class="form-group">
+                    <label for="txtCodigoDeBarras" class="col-md-4 control-label">Código de Barras</label>
+                    <div class="col-md-8">
+                        <input class="form-control input-sm" id="txtCodigoDeBarras" name="txtCodigoDeBarras" placeholder="Código de Barras" type="text" maxlength="25"
+                               required data-toggle="tooltip"
+                               data-rule-required="true" data-msg-required="Informe o código de barras"
+                               data-rule-minlength="1" data-msg-minlength="Informe ao menos 1 caracter">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-4">
+                <div class="form-group">
+                    <label for="txtCPF" class="col-md-4 control-label">Descrição</label>
+                    <div class="col-md-8">
+                        <input class="form-control input-sm" id="txtDescricao" name="txtDescricao" placeholder="Descrição do Produto" type="text" maxlength="30"
+                               required data-toggle="tooltip"
+                               data-rule-required="true" data-msg-required="Informe a descrição do produto"
+                               data-rule-minlength="3" data-msg-minlength="Informe ao menos 3 caractéres">
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-4">
+                <div class="form-group">
+                    <label for="drpTipo" class="col-md-4 control-label">Tipo</label>
+                    <div class="col-md-8">
+                        <select class="form-control input-sm " id="drpTipo" name="drpTipo" required data-toggle="tooltip" data-rule-required="true"
+                                data-msg-required="Informe o tipo">
+                            <option value="" selected="selected">-SELECIONE-</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-4">
+                <div class="form-group">
+                    <label for="txtPreco" class="col-md-4 control-label">Preço</label>
+                    <div class="col-md-8">
+                        <input class="form-control input-sm" id="txtPreco" name="txtPreco" placeholder="Preço" type="text" required data-toggle="tooltip"
+                               data-rule-required="true" data-msg-required="Informe o preço">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-4">
+                <div class="form-group">
+                    <label for="txtQuantidade" class="col-md-4 control-label">Quantidade</label>
+                    <div class="col-md-8">
+                        <input class="form-control input-sm" id="txtQuantidade" name="txtQuantidade" placeholder="Quantidade" type="text" required data-toggle="tooltip"
+                               data-rule-required="true" data-msg-required="Informe a quantidade">
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- /.row this actually does not appear to be needed with the form-horizontal -->
+
+        <button id="btnSalvar" class="btn btn-sm btn-info" type="submit">Salvar</button>
+    </form>
+</div>
+<!-- /Cadastro -->
+@section scripts{
+
+    <script type="text/javascript" src="../js/plugins/forms/jquery.price_format.2.0.min.js"></script>
+
+    @Scripts.Render("~/app/utils")
+    @Scripts.Render("~/app/views.produtoCadastro")
+
+}
+

@@ -1,0 +1,5 @@
+C:\Users\Fábio\source\repos\Exemplo\Stock\Stock\obj\Debug\Stock.csprojResolveAssemblyReference.cache
+C:\Users\Fábio\source\repos\Exemplo\Stock\Stock\bin\Debug\Stock.dll
+C:\Users\Fábio\source\repos\Exemplo\Stock\Stock\bin\Debug\Stock.pdb
+C:\Users\Fábio\source\repos\Exemplo\Stock\Stock\obj\Debug\Stock.dll
+C:\Users\Fábio\source\repos\Exemplo\Stock\Stock\obj\Debug\Stock.pdb
